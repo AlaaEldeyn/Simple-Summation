@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum numbers</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to bottom left ,#7474BF,#348AC7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background: rgba(255, 255, 255, 0.21);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1;
+        }
+        .container input, .container button{
+            border-radius: 5px;
+            padding: 10px;
+            border: none;
+            outline: 1px solid transparent;
+            transition: .2s;
+        }
+        .container input{
+            background-color: rgba(255, 255, 255, 0.405);
+        }
+        .container input:focus{
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .container button{
+            background-color: #1da1f2;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 1.1;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(25, 25, 25, 0.1);
+        }
+        .container button:hover{
+            background-color: #1a88d2;
+        }
+        p{
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <input type="number" placeholder="Num 1" id="num1">
+            <input type="number" placeholder="Num 2" id="num2">
+            <button>Sum</button>
+            <p>Result: </p>
+        </div>
+    </main>
+    <script>
+        let numOne = document.getElementById("num1");
+        let numTwo = document.getElementById("num2");
+        let myBtn = document.getElementsByTagName("button")[0];
+        let result = document.getElementsByTagName("p")[0];
+        myBtn.onclick = function () {
+            if (numOne.value != "" && numTwo.value != "") {
+                let final = parseInt(numOne.value)+ parseInt(numTwo.value);
+                result.innerHTML = `Result: ${final}`;
+            }
+            numOne.value = "";
+            numTwo.value = "";
+        }
+    </script>
+</body>
+</html>
